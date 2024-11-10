@@ -18,9 +18,9 @@ function PlantPage() {
   );
   return (
     <main>
-      <NewPlantForm />
-      <Search />
-      <PlantList />
+      <NewPlantForm setPlants={setPlants}/>
+      <Search setSearchTerm={setSearchTerm}/>
+      <PlantList plants={filteredPlants}/>
     </main>
   );
 }
