@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import config from "../config/index.js";
 
 function PlantCard({ plant, onClickDelete }) {
   const [inStock, setInStock] = useState("true");
@@ -8,7 +9,7 @@ function PlantCard({ plant, onClickDelete }) {
   };
 
   const handleClickDelete = () => {
-    fetch(`http://localhost:6001/plants/${plant.id}`, {
+    fetch(`${config.BASE_URL}/plants/${plant.id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())

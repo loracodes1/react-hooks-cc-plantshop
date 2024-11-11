@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import config from "../config/index.js";
 
 function NewPlantForm({ onAddItem }) {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ function NewPlantForm({ onAddItem }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    fetch("http://localhost:6001/plants", {
+    fetch(`${config.BASE_URL}/plants`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

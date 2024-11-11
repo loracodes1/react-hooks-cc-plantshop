@@ -3,13 +3,14 @@ import NewPlantForm from "./NewPlantForm";
 import PlantList from "./PlantList";
 import Search from "./Search";
 import { useEffect, useState } from "react";
+import config from "../config/index.js";
 
 function PlantPage() {
   const [plants, setPlants] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:6001/plants")
+    fetch(`${config.BASE_URL}/plants`)
       .then((r) => r.json())
       .then((data) => setPlants(data));
   }, []);
